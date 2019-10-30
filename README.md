@@ -1,6 +1,6 @@
 ## Run this project
 
-[DEMO LINK](https://amserhii11.github.io/shoptest/)
+Open this ---> [DEMO LINK](https://amserhii11.github.io/shoptest/)
 
 ### `npm start`
 
