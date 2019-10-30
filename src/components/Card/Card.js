@@ -4,7 +4,7 @@ import "./Card.css";
 const Card = ({ item, addToShoppingCard }) => (
 	<div className="product-information">
 		<img
-			src="./images/imac.jpeg"
+			src="https://s.dou.ua/CACHE/images/img/static/companies/sw-logo-dou_2/d7e715c5280fef8b4d77d951a3d50ddc.png"
 			alt="Photo of product"
 			className="product-photo"
 		/>

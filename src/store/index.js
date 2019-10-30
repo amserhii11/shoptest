@@ -4,17 +4,23 @@ import goods from "../api/goods";
 
 const ACTION_TYPES = {
 	ADD_TO_SHOPPING_CARD: "ADD_TO_SHOPPING_CARD",
-	DELETE_FROM_SHOPPING_CARD: "DELETE_FROM_SHOPPING_CARD"
+	DELETE_FROM_SHOPPING_CARD: "DELETE_FROM_SHOPPING_CARD",
+	UPDATE_SHOPPING_CARD: "UPDATE_SHOPPING_CARD"
 };
 
-export const addToShoppingCard = id => ({
+export const addToShoppingCard = item => ({
 	type: ACTION_TYPES.ADD_TO_SHOPPING_CARD,
-	payload: id
+	payload: item
 });
 
 export const deleteFromShoppingCard = id => ({
 	type: ACTION_TYPES.DELETE_FROM_SHOPPING_CARD,
 	payload: id
+});
+
+export const updateShoppingCard = item => ({
+	type: ACTION_TYPES.UPDATE_SHOPPING_CARD,
+	payload: item
 });
 
 const initialState = {
@@ -23,7 +29,6 @@ const initialState = {
 };
 
 const uuidv1 = require("uuid/v1");
-uuidv1();
 
 function reducer(state = initialState, action = {}) {
 	switch (action.type) {
@@ -45,6 +50,12 @@ function reducer(state = initialState, action = {}) {
 				shoppingCard: state.shoppingCard.filter(
 					item => item.cardId !== action.payload
 				)
+			};
+
+		case ACTION_TYPES.UPDATE_SHOPPING_CARD:
+			return {
+				...state,
+				shoppingCard: [...state.shoppingCard, ...action.payload]
 			};
 
 		default:
