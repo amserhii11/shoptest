@@ -21,3 +21,9 @@
   .close:after {
   transform: rotate(-45deg);
   }
+
+  @media (max-width:500px) {
+    .label{
+      display: none;
+    }
+  }

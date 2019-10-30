@@ -32,7 +32,7 @@ class ShoppingCard extends React.Component {
 					<thead>
 						<tr>
 							<th>Name</th>
-							<th>Description</th>
+							<th className="label">Description</th>
 							<th>Price</th>
 							<th>Delete</th>
 						</tr>
@@ -57,7 +57,7 @@ class ShoppingCard extends React.Component {
 							shoppingCard.map(item => (
 								<tr>
 									<td>{item.name}</td>
-									<td>{item.label}</td>
+									<td className="label">{item.label}</td>
 									<td>{item.price}</td>
 									<td>
 										<span
