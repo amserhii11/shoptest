@@ -1,0 +1,86 @@
+.product-information {
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  max-height: 410px;
+  margin-bottom: 50px;
+  padding: 30px 14px 15px;
+  margin-left: 20px;
+}
+
+.product-name {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 15px;
+  margin-bottom: 5px;
+  width: 170px;
+}
+
+.description {
+  font-size: 15px;
+}
+
+.product-id,
+.price-label {
+  font-size: 12px;
+  line-height: 13px;
+}
+
+.price-number {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  margin-right: -1px;
+}
+
+.button-buy {
+  justify-content: center;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  width: 170px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.product-photo {
+  margin-left: 5px;
+  margin-bottom: 45px;
+  width: 160px;
+  height: 134px;
+}
+
+.button-buy:hover {
+  color: grey;
+  background: white;
+  border: 1px solid black;
+}
+
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: baseline;
+}
+
+.product-id {
+  display: flex;
+  align-self: stretch;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.price-label,
+.price-number {
+  margin: 0;
+}
+
+.product-content {
+  margin-top: -10px;
+}
