@@ -10,7 +10,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-## Download
+## Installation
 
 - Fork the repository with app
 - Clone forked repository
@@ -40,3 +40,15 @@ You will also see any lint errors in the console.
 - `src/store` - directory for redux store
 
 You should be writing code in `src/` directory.
+
+## Author
+
+Amelin Serhii
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
