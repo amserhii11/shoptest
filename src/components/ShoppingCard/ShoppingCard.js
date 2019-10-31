@@ -1,30 +1,26 @@
 import React from "react";
 import "./ShoppingCard.css";
+import { deleteFromLocalStorage } from "../../services/shoppingCardLocalStorage";
 
 class ShoppingCard extends React.Component {
+	state = {
+		shoppingCard: []
+	};
+
 	componentDidMount() {
-		if (this.props.shoppingCard.length) {
-			localStorage.setItem(
-				"shoppingCard",
-				JSON.stringify(this.props.shoppingCard)
-			);
-		}
-		if (localStorage.shoppingCard && this.props.shoppingCard.length === 0) {
-			this.props.updateShoppingCard(
-				JSON.parse(localStorage.getItem("shoppingCard"))
-			);
-		}
+		this.setState({
+			shoppingCard: JSON.parse(localStorage.getItem("shoppingCard"))
+		});
 	}
 
-	componentDidUpdate() {
-		localStorage.setItem(
-			"shoppingCard",
-			JSON.stringify(this.props.shoppingCard)
-		);
-	}
+	updateComponent = () => {
+		this.setState({
+			shoppingCard: JSON.parse(localStorage.getItem("shoppingCard"))
+		});
+	};
 
 	render() {
-		const { shoppingCard, deleteFromShoppingCard } = this.props;
+		const { shoppingCard } = this.state;
 		return (
 			<div className="container">
 				<h2>Shopping Card</h2>
@@ -42,7 +38,7 @@ class ShoppingCard extends React.Component {
 							<td>
 								<h4>
 									Total price:
-									{shoppingCard.length &&
+									{shoppingCard &&
 										shoppingCard.reduce(
 											(total, amount) => (total += amount.price),
 											0
@@ -53,7 +49,7 @@ class ShoppingCard extends React.Component {
 						</tr>
 					</tfoot>
 					<tbody>
-						{shoppingCard.length > 0 ? (
+						{shoppingCard ? (
 							shoppingCard.map(item => (
 								<tr>
 									<td>{item.name}</td>
@@ -62,7 +58,12 @@ class ShoppingCard extends React.Component {
 									<td>
 										<span
 											className="close"
-											onClick={() => deleteFromShoppingCard(item.cardId)}
+											onClick={() =>
+												deleteFromLocalStorage(
+													item.cardId,
+													this.updateComponent
+												)
+											}
 										></span>
 									</td>
 								</tr>

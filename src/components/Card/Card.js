@@ -1,7 +1,8 @@
 import React from "react";
 import "./Card.css";
+import { addToLocalStorage } from "../../services/shoppingCardLocalStorage";
 
-const Card = ({ item, addToShoppingCard }) => (
+const Card = ({ item }) => (
 	<div className="product-information">
 		<img
 			src="https://s.dou.ua/CACHE/images/img/static/companies/sw-logo-dou_2/d7e715c5280fef8b4d77d951a3d50ddc.png"
@@ -21,7 +22,7 @@ const Card = ({ item, addToShoppingCard }) => (
 			<button
 				type="button"
 				className="btn btn-dark button-buy"
-				onClick={() => addToShoppingCard(item)}
+				onClick={() => addToLocalStorage(item)}
 			>
 				ADD
 			</button>

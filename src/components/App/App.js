@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "../Header/Header";
-import { Catalog } from "../Catalog/index";
+import Catalog from "../Catalog/Catalog";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { ShoppingCard } from "../ShoppingCard/index";
+import ShoppingCard from "../ShoppingCard/ShoppingCard";
 
 const App = () => (
 	<>
